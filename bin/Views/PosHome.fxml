@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.PosHomeController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="46.0" prefWidth="1333.0" style="-fx-background-color: #3196DE;">
+         <children>
+            <Label alignment="CENTER" layoutX="15.0" layoutY="8.0" text="Point Of Sale" textFill="#f5f4f4">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="266.0" layoutY="72.0" prefHeight="46.0" prefWidth="215.0" style="-fx-background-color: #3196DE;">
+         <children>
+            <Label alignment="CENTER" prefHeight="20.0" prefWidth="215.0" style="-fx-background-color: #ec008c;" text="Bill No#" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtBillNo" alignment="CENTER" layoutX="-1.0" layoutY="20.0" onKeyPressed="#next" prefHeight="25.0" prefWidth="215.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="489.0" layoutY="72.0" prefHeight="46.0" prefWidth="116.0" style="-fx-background-color: #3196DE;">
+         <children>
+            <Label alignment="CENTER" prefHeight="20.0" prefWidth="116.0" style="-fx-background-color: #ec008c;" text="Date " textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtDate" alignment="CENTER" layoutY="20.0" prefHeight="6.0" prefWidth="116.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="613.0" layoutY="72.0" prefHeight="46.0" prefWidth="215.0" style="-fx-background-color: #3196DE;">
+         <children>
+            <Label layoutY="-1.0" prefHeight="20.0" prefWidth="215.0" style="-fx-background-color: #ec008c;" text="                           Cashier" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtCashier" alignment="CENTER" layoutY="20.0" prefHeight="25.0" prefWidth="215.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="266.0" layoutY="131.0" prefHeight="46.0" prefWidth="339.0" style="-fx-background-color: #3196DE;">
+         <children>
+            <Label alignment="CENTER" prefHeight="20.0" prefWidth="339.0" style="-fx-background-color: #ec008c;" text="Item Code ( Search Using Name)" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtBarCode" alignment="CENTER" layoutY="20.0" prefHeight="25.0" prefWidth="339.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="613.0" layoutY="131.0" prefHeight="46.0" prefWidth="215.0" style="-fx-background-color: #3196DE;">
+         <children>
+            <Label alignment="CENTER" layoutY="-1.0" prefHeight="20.0" prefWidth="215.0" style="-fx-background-color: #ec008c;" text="Quantity" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtQty" alignment="CENTER" layoutY="20.0" prefHeight="5.0" prefWidth="215.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="836.0" layoutY="131.0" prefHeight="46.0" prefWidth="215.0" style="-fx-background-color: #3196DE;">
+         <children>
+            <Label alignment="CENTER" layoutY="-1.0" prefHeight="20.0" prefWidth="215.0" style="-fx-background-color: #ec008c;" text="Rate" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtRate" alignment="CENTER" layoutY="20.0" prefHeight="5.0" prefWidth="215.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="836.0" layoutY="72.0" prefHeight="46.0" prefWidth="215.0" style="-fx-background-color: #3196DE;">
+         <children>
+            <Label alignment="CENTER" layoutY="1.0" prefHeight="20.0" prefWidth="215.0" style="-fx-background-color: #ec008c;" text="Customer Id" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtCustomer" alignment="CENTER" layoutY="20.0" prefHeight="0.0" prefWidth="215.0" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="lblinfo" layoutX="267.0" layoutY="186.0" prefHeight="17.0" prefWidth="417.0" text="Press 'DOWN' key for suggestion , Enter to SELECT and NEXT , ECS to exit" textFill="#ec008c">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="14.0" layoutY="219.0" prefHeight="375.0" prefWidth="1037.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="SI.No" />
+          <TableColumn fx:id="itemCode" prefWidth="211.0" text="Item Code" />
+            <TableColumn fx:id="itemName" prefWidth="274.0" text="Name" />
+            <TableColumn fx:id="rate" prefWidth="176.0" text="Rate" />
+            <TableColumn fx:id="qty" prefWidth="111.0" text="Qty" />
+            <TableColumn fx:id="ammount" prefWidth="187.0" text="Amount" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="1080.0" layoutY="71.0" prefHeight="609.0" prefWidth="267.0" style="-fx-background-color: #3196DE;">
+         <children>
+            <AnchorPane prefHeight="46.0" prefWidth="267.0" style="-fx-background-color: #ec008c;">
+               <children>
+                  <Label layoutX="59.0" layoutY="8.0" text="Retail Price" textFill="#f5f4f4">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="6.0" layoutY="54.0" prefHeight="20.0" prefWidth="86.0" style="-fx-background-color: #3196DE;" text="Pay Mode" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="82.0" prefHeight="20.0" prefWidth="86.0" style="-fx-background-color: #3196DE;" text="Total Items" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="110.0" prefHeight="20.0" prefWidth="86.0" style="-fx-background-color: #3196DE;" text="Total Qty" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="139.0" prefHeight="20.0" prefWidth="86.0" style="-fx-background-color: #3196DE;" text="Sub Total" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="168.0" prefHeight="20.0" prefWidth="106.0" style="-fx-background-color: #3196DE;" text="Item W.Dis Amt" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="197.0" prefHeight="20.0" prefWidth="86.0" style="-fx-background-color: #3196DE;" text="Bill Dis%" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="7.0" layoutY="227.0" prefHeight="20.0" prefWidth="86.0" style="-fx-background-color: #3196DE;" text="Bill Dis Amt" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="7.0" layoutY="255.0" prefHeight="20.0" prefWidth="86.0" style="-fx-background-color: #3196DE;" text="Grand Total" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="7.0" layoutY="285.0" prefHeight="20.0" prefWidth="86.0" style="-fx-background-color: #3196DE;" text="Tax Includes" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="comboPayMode" focusColor="#3196de" layoutX="83.0" layoutY="51.0" prefHeight="25.0" prefWidth="174.0" promptText="                  BY CASH" unFocusColor="#c645aa" />
+            <JFXTextField fx:id="txtTotalItem" alignment="CENTER" focusColor="#3196de" labelFloat="true" layoutX="91.0" layoutY="80.0" prefHeight="28.0" prefWidth="167.0" unFocusColor="#c645aa">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtTotalQty" alignment="CENTER" focusColor="#3196de" layoutX="91.0" layoutY="112.0" prefHeight="28.0" prefWidth="167.0" unFocusColor="#c645aa">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtSubTotal" alignment="CENTER" focusColor="#3196de" layoutX="108.0" layoutY="139.0" prefHeight="28.0" prefWidth="150.0" unFocusColor="#c645aa">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtItemDisAmt" alignment="CENTER" focusColor="#3196de" layoutX="115.0" layoutY="167.0" prefHeight="28.0" prefWidth="142.0" unFocusColor="#c645aa">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtBillDisPr" alignment="CENTER" focusColor="#3196de" layoutX="83.0" layoutY="195.0" prefHeight="28.0" prefWidth="174.0" unFocusColor="#c645aa">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtBillAmt" alignment="CENTER" focusColor="#3196de" layoutX="98.0" layoutY="222.0" prefHeight="28.0" prefWidth="159.0" unFocusColor="#c645aa">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtGrandTot" alignment="CENTER" focusColor="#3196de" layoutX="99.0" layoutY="249.0" prefHeight="28.0" prefWidth="159.0" unFocusColor="#c645aa">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtTax" alignment="CENTER" focusColor="#3196de" layoutX="98.0" layoutY="276.0" prefHeight="28.0" prefWidth="159.0" unFocusColor="#c645aa">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <AnchorPane layoutX="6.0" layoutY="320.0" prefHeight="83.0" prefWidth="213.0" style="-fx-background-color: b4ddf8;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="37.0" prefWidth="255.0" style="-fx-background-color: #ec008c;" text="Net Total" textFill="#f5f0f0">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtNetTotal" alignment="CENTER" focusColor="#3196de" layoutX="23.0" layoutY="37.0" prefHeight="40.0" prefWidth="207.0" unFocusColor="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="6.0" layoutY="412.0" prefHeight="83.0" prefWidth="213.0" style="-fx-background-color: b4ddf8;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="37.0" prefWidth="255.0" style="-fx-background-color: #ec008c;" text="Cash Recived" textFill="#f5f0f0">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtCashRcvd" alignment="CENTER" focusColor="#3196de" layoutX="23.0" layoutY="37.0" prefHeight="40.0" prefWidth="207.0" unFocusColor="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="5.0" layoutY="507.0" prefHeight="83.0" prefWidth="213.0" style="-fx-background-color: b4ddf8;">
+               <children>
+                  <Label alignment="CENTER" layoutY="-3.0" prefHeight="37.0" prefWidth="255.0" style="-fx-background-color: #ec008c;" text="Balance" textFill="#f5f0f0">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtBalance" alignment="CENTER" focusColor="#3196de" layoutX="23.0" layoutY="37.0" prefHeight="40.0" prefWidth="207.0" unFocusColor="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnSave" alignment="CENTER" layoutX="16.0" layoutY="615.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="      Save" textFill="#ec008c">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="25.0" layoutY="623.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/save.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnView" alignment="CENTER_RIGHT" layoutX="147.0" layoutY="616.0" mnemonicParsing="false" onAction="#openCustomer" prefHeight="55.0" prefWidth="116.0" text="View" textFill="#ec008c">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="46.0" fitWidth="38.0" layoutX="159.0" layoutY="624.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/veiw1.png" />
+         </image>
+      </ImageView>
+      <Button alignment="CENTER_RIGHT" layoutX="279.0" layoutY="616.0" mnemonicParsing="false" onAction="#LoadReturnHome" prefHeight="55.0" prefWidth="123.0" text="Return" textFill="#ec008c">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="btnRemove" fitHeight="46.0" fitWidth="40.0" layoutX="285.0" layoutY="628.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/itmReturn.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnSearch" alignment="CENTER_RIGHT" layoutX="418.0" layoutY="617.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Search" textFill="#ec008c">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="46.0" fitWidth="38.0" layoutX="424.0" layoutY="627.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/SEARCH.Png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnLastBill" alignment="CENTER_RIGHT" layoutX="548.0" layoutY="618.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Last Bill" textFill="#ec008c">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="46.0" fitWidth="39.0" layoutX="544.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/bill.Png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnHome" alignment="CENTER_RIGHT" layoutX="810.0" layoutY="619.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Home" textFill="#ec008c">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="46.0" fitWidth="38.0" layoutX="813.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnLogout" alignment="CENTER_RIGHT" layoutX="679.0" layoutY="619.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Lg Out" textFill="#ec008c">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="46.0" fitWidth="36.0" layoutX="681.0" layoutY="629.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logout.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="14.0" layoutY="73.0" prefHeight="106.0" prefWidth="243.0" style="-fx-border-color: #3196de;" />
+      <ImageView fitHeight="95.0" fitWidth="128.0" layoutX="19.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/jobseeker2.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="147.0" layoutY="76.0" prefHeight="106.0" prefWidth="99.0">
+         <children>
+            <Label fx:id="lblEID" layoutX="55.0" layoutY="14.0" text="EID104" textFill="#ec008c">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <Label layoutX="6.0" layoutY="36.0" text="Malabe" />
+            <Label fx:id="lblDate" layoutX="6.0" layoutY="59.0" text="2017-05-15" />
+            <Label fx:id="lblTime" layoutX="7.0" layoutY="80.0" text="15-36 PM" />
+            <Label fx:id="lblEID1" layoutX="4.0" layoutY="14.0" text="Emp Id : " textFill="#ec008c">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="warning" layoutX="712.0" layoutY="186.0" prefHeight="17.0" prefWidth="339.0" text="warrnin" textFill="#ec008c">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

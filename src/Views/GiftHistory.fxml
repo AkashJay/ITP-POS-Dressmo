@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="462.0" prefWidth="766.0" style="-fx-background-color: #969495;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.GiftHistoryController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="9.0" prefHeight="438.0" prefWidth="741.0" style="-fx-background-color: white;">
+         <children>
+            <Label prefHeight="46.0" prefWidth="741.0" style="-fx-background-color: #3196de;" text="  GIft History" textFill="#f2f2f2">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TitledPane fx:id="giftedTable" animated="false" collapsible="false" layoutX="16.0" layoutY="61.0" prefHeight="363.0" prefWidth="405.0" text="Gift Details">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="337.0" prefWidth="403.0">
+                     <children>
+                        <TableView fx:id="giftTable" layoutX="17.0" layoutY="43.0" prefHeight="275.0" prefWidth="366.0">
+                           <columns>
+                              <TableColumn fx:id="mobileNo" prefWidth="102.0" text="Mobile No" />
+                              <TableColumn fx:id="date" prefWidth="145.0" text="Date offered" />
+                              <TableColumn fx:id="type" prefWidth="117.0" text="Gift Type" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="22.0" layoutY="9.0" text="Filter by mibile no">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="filterField" layoutX="147.0" layoutY="5.0" prefHeight="28.0" prefWidth="151.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TitledPane>
+            <Label layoutX="476.0" layoutY="114.0" text="Full Name :" />
+            <JFXTextField fx:id="txtname" layoutX="561.0" layoutY="110.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <Separator layoutX="437.0" layoutY="48.0" orientation="VERTICAL" prefHeight="385.0" prefWidth="3.0" />
+            <Label layoutX="450.0" layoutY="62.0" prefHeight="27.0" prefWidth="281.0" style="-fx-background-color: #3196de;" text="  Customer Details" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="476.0" layoutY="153.0" text="Mobile No :" />
+            <JFXTextField fx:id="txtMobile" layoutX="561.0" layoutY="149.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="476.0" layoutY="192.0" text="Email :" />
+            <JFXTextField fx:id="txtEmail" layoutX="561.0" layoutY="188.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="477.0" layoutY="231.0" text="NIC :" />
+            <JFXTextField fx:id="txtNic" layoutX="562.0" layoutY="227.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton buttonType="RAISED" layoutX="498.0" layoutY="310.0" onAction="#deleteGift" prefHeight="30.0" prefWidth="197.0" style="-fx-background-color: #3196DE;" text="Cancel / Delete Gift" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="499.0" layoutY="350.0" onAction="#clear" prefHeight="30.0" prefWidth="197.0" style="-fx-background-color: #3196DE;" text="Clear All" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="499.0" layoutY="389.0" prefHeight="30.0" prefWidth="197.0" style="-fx-background-color: #3196DE;" text="Back to Customer Home" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="477.0" layoutY="270.0" text="Gift Type :" />
+            <JFXTextField fx:id="txtType" layoutX="562.0" layoutY="266.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

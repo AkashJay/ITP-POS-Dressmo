@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="459.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.LoginPOSController">
+   <children>
+      <AnchorPane prefHeight="151.0" prefWidth="700.0" style="-fx-background-color: #3196DE;">
+         <children>
+            <MaterialDesignIconView fx:id="btn_close" glyphName="CLOSE" layoutX="680.0" layoutY="18.0" onMouseClicked="#close" size="20" text="" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="165.0" layoutY="60.0" prefHeight="346.0" prefWidth="377.0" style="-fx-background-color: white; -fx-background-radius: 8px;">
+         <children>
+            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="144.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/jobseeker2.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="82.0" layoutY="146.0" prefHeight="25.0" prefWidth="214.0" promptText="User name">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="82.0" layoutY="205.0" prefHeight="25.0" prefWidth="214.0" promptText="Password">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton fx:id="login" buttonType="RAISED" layoutX="134.0" layoutY="268.0" onAction="#LoadPosHome" prefHeight="44.0" prefWidth="110.0" style="-fx-background-color: #3196DE;" text="Login" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <StackPane fx:id="stackePane" layoutX="93.0" layoutY="21.0" prefHeight="5.0" prefWidth="20.0" />
+            <Label fx:id="erroeLbl" layoutX="82.0" layoutY="321.0" text="Login failed..Enter valid login details...." textFill="#ee0303" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
